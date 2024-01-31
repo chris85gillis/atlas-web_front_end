@@ -20,4 +20,4 @@ Atlas Fountations / T1 & T2
 
 | Directories                              | Description                                                       |
 | ---------------------------------------- | ----------------------------------------------------------------- |
-| dveloper_tools                           | How to use web dev tools                                          |
+| dveloper_tools                           | How to navagate and use web dev tools                             |
