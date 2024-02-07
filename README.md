@@ -11,6 +11,9 @@ Atlas Fountations / T1 & T2
 ## Built With
 
 - Snipping Tool
+- HTML
+- CSS
+- SCSS
 
 ## Authors
 
