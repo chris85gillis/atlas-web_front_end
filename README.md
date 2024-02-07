@@ -21,3 +21,5 @@ Atlas Fountations / T1 & T2
 | Directories                              | Description                                                       |
 | ---------------------------------------- | ----------------------------------------------------------------- |
 | dveloper_tools                           | How to navagate and use web dev tools                             |
+| flexbox                                  | Working with flexbox using different elements and containers      |
+| sass_scss                                | How to write Sass & Scss files                                    |
