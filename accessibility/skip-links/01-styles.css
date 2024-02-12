@@ -191,7 +191,7 @@
   }
 
   .off-screen {
-	left: -100w;
+	left: -100vw;
 	position: absolute;
   }
 
@@ -212,7 +212,7 @@
     opacity: 1;
     transform: translateY(0);
   }
-  
+
   /*** 2. LAYOUT ***/
   
   /* Layout
