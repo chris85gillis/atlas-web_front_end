@@ -14,6 +14,7 @@ Atlas Fountations / T1 & T2
 - HTML
 - CSS
 - SCSS
+- Bootstrap
 
 ## Authors
 
@@ -28,3 +29,4 @@ Atlas Fountations / T1 & T2
 | sass_scss                                | How to write Sass & Scss files                                    |
 | accessability                            | A crash course on Accessiblity                                    |
 | forms                                    | How to create a form                                              |
+| Bootstrap                                | How to use bootstrap instead of CSS                               |
