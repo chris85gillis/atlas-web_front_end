@@ -30,3 +30,4 @@ Atlas Fountations / T1 & T2
 | accessability                            | A crash course on Accessiblity                                    |
 | forms                                    | How to create a form                                              |
 | Bootstrap                                | How to use bootstrap instead of CSS                               |
+| Javascript_advanced                      | Using Javascript to create different kinds of functions           |
