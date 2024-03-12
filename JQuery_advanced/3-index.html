@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Task 3</title>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+    <script type="application/javascript">
+        $(document).ready(() => {
+            // Function to create a family tree
+            function createFamilyTree() {
+                // Create table element
+                const table = $('<table></table>');
+                // Create table header
+                const thead = $('<thead></thead>');
+                // Create header row
+                const theadRow = $('<tr></tr>');
+
+                // Create table header cells for first name and last name
+                const firstName = $('<th>First Name</th>');
+                const lastName = $('<th>Last Name</th>')
+                theadRow.append(firstName, lastName);
+                thead.append(theadRow);
+
+                // Create table body
+                const tbody = $('<tbody></tbody>');
+                // Data for family members
+                const data = [
+                    {firstName: 'Guillaume', lastName: 'Salva'},
+                    {firstName: 'Paulette', lastName: 'Salva'},
+                    {firstName: 'Antoine', lastName: 'Salva'}
+                ];
+                // Loop through data to create rows for each family member
+                data.forEach((member) => {
+                    const row = $('<tr></tr>');
+                    // Create table cells for first name and last name
+                    const nameTD = $(`<td>${member.firstName}</td>`);
+                    const lastTD = $(`<td>${member.lastName}</td>`);
+                    row.append(nameTD, lastTD);
+                    tbody.append(row);
+                });
+                // Append header and body to the table
+                table.append(thead, tbody);
+                // Append table to the body of the HTML document
+                $('body').append(table);
+            }
+            // Call the function to create the family tree when the document is ready
+            createFamilyTree();
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
