@@ -1,0 +1,24 @@
+{
+	"posts": [
+	  {
+		"id": "1985",
+		"author": "Chris",
+		"title": "Full Stack Developer"
+	  },
+	  {
+		"id": "2024",
+		"author": "Jonny",
+		"title": "Master in Chief"
+	  }
+	],
+	"comments": [
+	  {
+		"id": "2000",
+		"body": "Is this even working?",
+		"postId": 1
+	  }
+	],
+	"profile": {
+	  "name": "cloud85strife"
+	}
+  }
