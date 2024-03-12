@@ -8,50 +8,32 @@
     <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
     <script type="application/javascript">
         $(document).ready(() => {
-            // Function to create a family tree
             function createFamilyTree() {
-                // Create table element
                 const table = $('<table></table>');
-                // Create table header and row
                 const thead = $('<thead><tr></tr></thead>');
-                // Create table header cells for first name and last name
                 const firstNameP = $('<th>Firstname</th>');
                 const lastNameP = $('<th>Lastname</th>');
-                // Append header cells to the header row
                 thead.append(firstNameP, lastNameP);
-                // Create table body
                 const tbody = $('<tbody></tbody>');
-                // Append header and body to the table
                 table.append(thead, tbody);
-                // Append table to the body of the HTML document
                 $('body').append(table);
             }
 
-            // Function to add a new family member
             function addNewMember(firstName, lastName) {
-                // Select the table body
                 const tbody = $('tbody');
-                // Create a new row for the new member
                 const newRow = $('<tr></tr>');
-                // Create table cells for the new member's first and last names
                 const fstN = $(`<td>${firstName}</td>`);
                 const lstN = $(`<td>${lastName}</td>`);
-                // Create a cell with a cross to remove the member
                 const cross = $('<td>(x)</td>');
-                // Add a click event to remove the row when the cross is clicked
                 cross.css('background-color', 'orange');
                 cross.click(() => {
                     newRow.remove();
                 });
-                // Append cells to the new row
                 newRow.append(fstN, lstN, cross);
-                // Append the new row to the table body
                 tbody.append(newRow);
             }
 
-            // Call the function to create the initial family tree
             createFamilyTree();
-            // Add some sample family members
             addNewMember('Guillaume', 'Salva');
             addNewMember('Arielle', 'Snizt');
             addNewMember('Fanette', 'Snizt');

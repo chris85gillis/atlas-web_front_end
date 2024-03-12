@@ -9,7 +9,6 @@
         <script type="application/javascript">
           $(document).ready(() => {
             
-            // Function to create family tree structure
             function createFamilyTree() {
               const table = $('<table></table>');
               const thead = $('<thead><tr></tr></thead>');
@@ -21,7 +20,6 @@
               $('body').append(table);
             }
             
-            // Function to add new member to the family tree
             function addNewMember(firstName, lastName, position) {
               const tbody = $('tbody');
               const newRow = $('<tr></tr>');
@@ -40,25 +38,23 @@
               }
             }
             
-            // Function to create form for adding new members
             function createForm() {
-              const form = $('<form></form>'); // Creating a form element
-              const fstN = $('<input type="text" />'); // Input field for first name
-              const lstN = $('<input type="text" />'); // Input field for last name
-              const select = $('<select><option value="before">Before</option><option value="after">After</option></select>'); // Select dropdown for position
-              const submitB = $('<input type="submit" value="submit"/>'); // Submit button
-              form.append(fstN, lstN, select, submitB); // Appending form elements
-              $('body').prepend(form); // Adding the form to the beginning of the body
-              form.submit((event) => { // Handling form submission
-                event.preventDefault(); // Preventing default form submission
-                const fN = fstN.val(); // Getting value of first name input
-                const lN = lstN.val(); // Getting value of last name input
-                const position = select.val(); // Getting selected position
-                addNewMember(fN, lN, position); // Calling function to add new member
+              const form = $('<form></form>');
+              const fstN = $('<input type="text" />');
+              const lstN = $('<input type="text" />');
+              const select = $('<select><option value="before">Before</option><option value="after">After</option></select>');
+              const submitB = $('<input type="submit" value="submit"/>');
+              form.append(fstN, lstN, select, submitB);
+              $('body').prepend(form);
+              form.submit((event) => {
+                event.preventDefault();
+                const fN = fstN.val();
+                const lN = lstN.val();
+                const position = select.val();
+                addNewMember(fN, lN, position);
               });
             }
             
-            // Calling functions to create family tree and form
             createFamilyTree();
             createForm();
           })
