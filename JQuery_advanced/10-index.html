@@ -2,7 +2,6 @@
 <html lang="en" dir="ltr">
 
 <head>
-
   <meta charset="utf-8" />
   <title>Task 8</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -45,14 +44,64 @@
         });
       }
 
-      listPosts(); // Call listPosts when the page loads
+      function buildForm() {
+        $('body').append(`
+          <form id="postForm">
+            <div>
+              <label for="author">Author</label>
+              <input type="text" id="author" name="author">
+            </div>
+            <div>
+              <label for="title">Title</label>
+              <textarea id="title" name="title"></textarea>
+            </div>
+            <input type="submit">
+          </form>
+        `);
 
-    })
+        // Select input text when clicking on the label
+        $('label').click(function () {
+          $(this).siblings('input[type="text"], textarea').select();
+        });
+
+        // Submit form without reloading the page on pressing enter
+        $('#postForm').submit(function (event) {
+          event.preventDefault();
+          sendForm();
+        });
+      }
+
+      function sendForm() {
+        $('#postForm').after('<p>About to send the query to the API</p>');
+
+        const data = {
+          title: $('#title').val(),
+          author: $('#author').val()
+        };
+
+        $.ajax({
+          url: 'http://localhost:3000/posts',
+          method: 'POST',
+          dataType: 'json',
+          data: data,
+          success: function (response) {
+            addPostRow(response);
+          },
+          error: function (xhr, status, error) {
+            alert('Error sending the POST query');
+            console.error('Error', error);
+          }
+        });
+      }
+
+      listPosts();
+      buildForm();
+
+    });
   </script>
 </head>
 
 <body>
-
 </body>
 
 </html>
