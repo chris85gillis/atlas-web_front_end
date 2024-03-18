@@ -18,18 +18,12 @@
       const emailInp = document.getElementById('email');
       const firstname = firstnameInp.value;
       const email = emailInp.value;
-      
-      // Set cookie expiration date to 10 days from now
-      const expirationDate = new Date();
-      expirationDate.setDate(expirationDate.getDate() + 10);
 
-      // Format the expiration date as a UTC string
-      const expires = expirationDate.toUTCString();
+      const expiration = new Date();
+      expiration.setDate(expiration.getDate() + 10);
 
-      // Set cookies with expiration date
-      document.cookie = `firstname=${firstname}; expires=${expires}`;
-      document.cookie = `email=${email}; expires=${expires}`;
-      
+      document.cookie = `firstname=${firstname}; expires=${expiration.toUTCString()}`;
+      document.cookie = `email=${email}; expires=${expiration.toUTCString()}`;
       firstnameInp.value = '';
       emailInp.value = '';
     }
@@ -44,9 +38,9 @@
       document.body.appendChild(para);
     }
     function checkEnter(event) {
-      if (event.key === 'Enter') {
-        setCookies();
-      }
+            if (event.key === 'Enter') {
+                setCookies();
+            }
     }
   </script>
 </body>
