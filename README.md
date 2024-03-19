@@ -31,4 +31,4 @@ Atlas Fountations / T1 & T2
 | forms                                    | How to create a form                                              |
 | Bootstrap                                | How to use bootstrap instead of CSS                               |
 | Javascript_advanced                      | Using Javascript to create different kinds of functions           |
-| Cookies and local storage                | 
+| Cookies and local storage                | Using JQuary to generate cookie using local storage               |
