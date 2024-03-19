@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 5</title>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+
+</head>
+<body>
+  <script>
+    // Array of available items
+    const availableItems = ['Shampoo', 'Soap', 'Sponge', 'Water'];
+
+    // Function to check if localStorage is available
+    const isLocalStorageAvailable = () => {
+      try {
+        const key = `__storage__test`;
+        window.localStorage.setItem(key, null);
+        window.localStorage.removeItem(key);
+        return true;
+      } catch (e) {
+        return false;
+      }
+    };
+
+    // Function to add an item to the cart
+    function addItemToCart(item) {
+      // Check if localStorage is available
+      if (!isLocalStorageAvailable()) {
+        alert('Sorry, your browser does not support Web storage. Try again with a better one');
+        return;
+      }
+      localStorage.setItem(item, 'true');
+      displayCart();
+    }
+
+    // Function to create the store UI
+    function createStore() {
+      const ul = document.createElement('ul');
+      // Loop through available items
+      availableItems.forEach((item) => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        li.onclick = () => addItemToCart(item);
+        ul.appendChild(li);
+      });
+      document.body.appendChild(ul);
+    }
+
+    // Function to display cart information
+    function displayCart() {
+      const storageItems = Object.keys(localStorage);
+      let para = document.getElementById('cartInfo');
+      if (!para) {
+        para = document.createElement('p');
+        para.id = 'cartInfo';
+        document.body.appendChild(para);
+      }
+      // Update text content of cartInfo based on number of items in cart
+      para.textContent = storageItems.length === 0 ? '' : `You previously had ${storageItems.length} items in your cart`;
+    }
+
+    // Function to clear localStorage and update cart display
+    function clearStorage() {
+      localStorage.clear();
+      displayCart();
+    }
+
+    createStore();
+    displayCart();
+
+  </script>
+  <button onclick="clearStorage()">Clear Cart</button>
+</body>
+</html>
