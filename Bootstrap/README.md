@@ -1,4 +1,6 @@
-![81ad5d3e90751bb185d9](https://github.com/chris85gillis/atlas-web_front_end/assets/126268722/b0fe3c88-5099-49e6-a179-6e19076ad66f)
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&height=300&color=gradient&text=BOOTSTRAP%20&fontColor=FFFFFF" alt="Bootstrap"/>
+</div>
 
 
 # Learning Objectives
