@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&height=300&color=gradient&text=FORM%20&fontColor=FFFFFF" alt="Form"/>
+</div>
+
 # Learning objectives
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
